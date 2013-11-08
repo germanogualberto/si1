@@ -40,5 +40,12 @@ public class Testes {
 		Assert.assertEquals("Palavra errada", "duzentos", d.numeroPorExtenso(200));	
 	}
 
+	@Test
+	public void caso2NumerosMenoresQue100(){
+		Assert.assertEquals("Palavra errada", "vinte e um", d.numeroPorExtenso(21));
+		Assert.assertEquals("Palavra errada", "quarenta e cinco", d.numeroPorExtenso(45));
+		Assert.assertEquals("Palavra errada", "noventa e três", d.numeroPorExtenso(93));
+		Assert.assertEquals("Palavra errada", "setenta e seis", d.numeroPorExtenso(76));
+	}
 	
 }

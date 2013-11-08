@@ -2,24 +2,23 @@ package ditadorDeNumeros;
 
 public class Ditador {
 
-	private String[] numero0A19Sem10 = {
+	private final String CONECTIVO = " e "; 
+	private final String[] NUMERO0A19SEM10 = {
 		"zero", "um", "dois", "três", "quatro", "cinco", 
 		"seis", "sete", "oito", "nove", null, "onze",
 		"doze", "treze", "catorze", "quinze", "dezesseis",
 		"dezessete", "dezoito", "dezenove"
 	};
-	private String[] dezenas = {
+	private final String[] DEZENAS = {
 		null, "dez", "vinte", "trinta", "quarenta", "cinquenta",
 		"sessenta", "setenta", "oitenta", "noventa"
 	};
-	private String[] centenas = {
+	private final String[] CENTENAS = {
 		null, "cem", "duzentos", "trezentos", "quatrocentos",
 		"quinhentos", "seiscentos", "setecentos", "oitocentos",
 		"novecentos"
 	};
-	
-	
-	
+		
 	public Ditador(){
 		
 	}
@@ -28,14 +27,21 @@ public class Ditador {
 		
 		
 		if (numero <20 && numero!=10){	
-			return numero0A19Sem10[numero];
+			return NUMERO0A19SEM10[numero];
 		}
 		if(numero%10 == 0 && numero<91){
-			return dezenas [numero/10];
+			return DEZENAS [numero/10];
 		}
 		if(numero%100 == 0 && numero<901){
-			return centenas[numero/100];
+			return CENTENAS[numero/100];
+		}
+		if(numero<100){
+			return doisNumerosMenoresQueCem(numero);
 		}
 		return null;
+	}
+
+	private String doisNumerosMenoresQueCem(int numero) {
+		return (DEZENAS[numero/10] + CONECTIVO+ NUMERO0A19SEM10[numero - (numero/10)*10 ]);
 	}
 }
