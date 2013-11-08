@@ -23,6 +23,16 @@ public class Testes {
 		Assert.assertEquals("Palavra errada", "zero", d.numeroPorExtenso(0));
 		
 	}
+	
+	@Test
+	public  void casoDezenas(){
+		//nome de dezenas 
+		Assert.assertEquals("Palavra errada", "dez", d.numeroPorExtenso(10));
+		Assert.assertEquals("Palavra errada", "trinta", d.numeroPorExtenso(30));
+		Assert.assertEquals("Palavra errada", "noventa", d.numeroPorExtenso(90));
+		Assert.assertEquals("Palavra errada", "vinte", d.numeroPorExtenso(20));
+		
+	}
 
 	
 }
