@@ -21,7 +21,6 @@ public class Testes {
 		Assert.assertEquals("Palavra errada", "dezessete", d.numeroPorExtenso(17));
 		Assert.assertEquals("Palavra errada", "oito", d.numeroPorExtenso(8));
 		Assert.assertEquals("Palavra errada", "zero", d.numeroPorExtenso(0));
-		
 	}
 	
 	@Test
@@ -31,7 +30,6 @@ public class Testes {
 		Assert.assertEquals("Palavra errada", "trinta", d.numeroPorExtenso(30));
 		Assert.assertEquals("Palavra errada", "noventa", d.numeroPorExtenso(90));
 		Assert.assertEquals("Palavra errada", "vinte", d.numeroPorExtenso(20));
-		
 	}
 	@Test
 	public  void casoCentenas(){
@@ -39,8 +37,7 @@ public class Testes {
 		Assert.assertEquals("Palavra errada", "cem", d.numeroPorExtenso(100));
 		Assert.assertEquals("Palavra errada", "quatrocentos", d.numeroPorExtenso(400));
 		Assert.assertEquals("Palavra errada", "novecentos", d.numeroPorExtenso(900));
-		Assert.assertEquals("Palavra errada", "duzentos", d.numeroPorExtenso(200));
-		
+		Assert.assertEquals("Palavra errada", "duzentos", d.numeroPorExtenso(200));	
 	}
 
 	
