@@ -48,4 +48,11 @@ public class Testes {
 		Assert.assertEquals("Palavra errada", "setenta e seis", d.numeroPorExtenso(76));
 	}
 	
+	@Test
+	public void casoEntre101E999(){
+		Assert.assertEquals("Palavra errada", "cento e dez", d.numeroPorExtenso(110));
+		Assert.assertEquals("Palavra errada", "trezentos e quarenta e cinco", d.numeroPorExtenso(345));
+		Assert.assertEquals("Palavra errada", "quatrocentos e três", d.numeroPorExtenso(403));
+		Assert.assertEquals("Palavra errada", "setecentos e setenta", d.numeroPorExtenso(770));
+	}
 }
