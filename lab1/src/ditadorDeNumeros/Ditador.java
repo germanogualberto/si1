@@ -2,6 +2,8 @@ package ditadorDeNumeros;
 
 public class Ditador {
 
+	private final String MIL = " mil";
+	private final String CENTO = "cento";
 	private final String CONECTIVO = " e "; 
 	private final String[] NUMERO0A19 = {
 		"zero", "um", "dois", "três", "quatro", "cinco", 
@@ -41,12 +43,26 @@ public class Ditador {
 		if(numero < 1000){
 			return menoresQueMil(numero);
 		}
+		if(numero < 1000000){
+			return menoresQueMilhao(numero);
+		}
 		return null;
+	}
+
+	private String menoresQueMilhao(int numero) {
+		if (numero%1000 == 0){
+			return menoresQueMil(numero/1000) + MIL;
+		}
+		//if (numero - (numero/1000) * 1000)
+		return menoresQueMil(numero/1000) + MIL + CONECTIVO + menoresQueMil(numero - (numero/1000) * 1000);
 	}
 
 	private String menoresQueMil(int numero) {
 		if (numero/100 == 1){
-			return "cento" + CONECTIVO + doisNumerosMenoresQueCem(numero-(numero/100)*100);
+			return CENTO + CONECTIVO + doisNumerosMenoresQueCem(numero-(numero/100)*100);
+		}
+		if (numero/100 == 0){
+			return doisNumerosMenoresQueCem(numero-(numero/100)*100);
 		}
 		return CENTENAS[numero/100] + CONECTIVO + doisNumerosMenoresQueCem(numero-(numero/100)*100);
 	}
